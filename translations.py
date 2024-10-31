@@ -39,4 +39,24 @@ romaji = {
         "hiragana":"こ",
         "katakana":"コ"
     },
+    "sa":{
+        "hiragana":"さ",
+        "katakana":"サ"
+    },
+    "shi":{
+        "hiragana":"し",
+        "katakana":"シ"
+    },
+    "su":{
+        "hiragana":"す",
+        "katakana":"ス"
+    },
+    "se":{
+        "hiragana":"せ",
+        "katakana":"セ"
+    },
+    "so":{
+        "hiragana":"そ",
+        "katakana":"ソ"
+    },
 }
