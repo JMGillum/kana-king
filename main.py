@@ -44,15 +44,16 @@ def translate(input):
 if __name__ == "__main__":    
     random.seed(datetime.now().timestamp())
     
-    item = random.choice(list(romaji.items()))
-    print(item[1]["hiragana"])
-    start = datetime.now().timestamp()
-    maxAttempts = 5
-    for i in range(maxAttempts):
+    item = random.choice(list(romaji.items())) # Picks a random item from the translation dictionary
+    print(item[1]["hiragana"]) # Prints the hiragana of this item
+    
+    start = datetime.now().timestamp() # Timestamp for start of guessing
+    maxAttempts = 5 # Number of incorrect guesses they can make before continuing on
+    for i in range(maxAttempts): # Gets and checks answer from user
         answer = input("What is the romaji?: ")
         if answer.strip().lower() == item[0]:
             break
     end = datetime.now().timestamp()
     
-    print(f"Total Time: {(end-start)}")
+    print(f"Total Time: {(end-start)}") # Prints the amount of time it took.
     
