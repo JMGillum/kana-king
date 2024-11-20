@@ -12,25 +12,25 @@ word = ""
 trial = ""
 index = 0
 while index < (len(input)):
-    try:
+    try: # Checks if it is three letter kana
         trial = input[index:index+3]
         test = romaji[trial]
     except KeyError:
-        try:
+        try: # Checks if it is two letter kana
             trial = input[index:index+2]
             test = romaji[trial]
         except KeyError:
-            try:
+            try: # Checks if it is one letter kana
                 trial = input[index:index+1]
                 test = romaji[trial]
             except KeyError:
                 word = trial
-            else:
+            else: # One letter kana
                 word = romaji[trial]["hiragana"]
-        else:
+        else: # Two letter kana
             word = romaji[trial]["hiragana"]
             index = index + 1
-    else:
+    else: # Three letter kana
         word = romaji[trial]["hiragana"]
         index = index + 2
     print(word,end="")
