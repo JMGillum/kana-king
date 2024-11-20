@@ -1,4 +1,8 @@
+import random
+from datetime import datetime
+
 from translations import romaji
+
 
 # Prints a chart of all translations
 # print("\tH\tK")
@@ -37,7 +41,18 @@ def translate(input):
         index = index + 1
     return output
 
-if __name__ == "__main__":
-    input = "katakana sushi"
-    print(input)
-    print(translate(input))
+if __name__ == "__main__":    
+    random.seed(datetime.now().timestamp())
+    
+    item = random.choice(list(romaji.items()))
+    print(item[1]["hiragana"])
+    start = datetime.now().timestamp()
+    maxAttempts = 5
+    for i in range(maxAttempts):
+        answer = input("What is the romaji?: ")
+        if answer.strip().lower() == item[0]:
+            break
+    end = datetime.now().timestamp()
+    
+    print(f"Total Time: {(end-start)}")
+    
