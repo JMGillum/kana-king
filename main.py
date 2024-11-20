@@ -10,7 +10,7 @@ def printTranslations():
         print(f"{item}:",end=" ")
         print(f'\t{romaji[item]["hiragana"]}\t{romaji[item]["katakana"]}')
 
-def translate(input):
+def translate(input,conversionType):
     word = ""
     trial = ""
     index = 0
@@ -30,12 +30,12 @@ def translate(input):
                 except KeyError:
                     word = trial
                 else: # One letter kana
-                    word = romaji[trial]["hiragana"]
+                    word = romaji[trial][conversionType]
             else: # Two letter kana
-                word = romaji[trial]["hiragana"]
+                word = romaji[trial][conversionType]
                 index = index + 1
         else: # Three letter kana
-            word = romaji[trial]["hiragana"]
+            word = romaji[trial][conversionType]
             index = index + 2
         output = output + word
         index = index + 1
