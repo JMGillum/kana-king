@@ -3,12 +3,12 @@ from datetime import datetime
 
 from translations import romaji
 
-
-# Prints a chart of all translations
-# print("\tH\tK")
-# for item in romaji:
-#     print(f"{item}:",end=" ")
-#     print(f'\t{romaji[item]["hiragana"]}\t{romaji[item]["katakana"]}')
+def printTranslations():
+    # Prints a chart of all translations
+    print("\tH\tK")
+    for item in romaji:
+        print(f"{item}:",end=" ")
+        print(f'\t{romaji[item]["hiragana"]}\t{romaji[item]["katakana"]}')
 
 def translate(input):
     word = ""
