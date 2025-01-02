@@ -41,10 +41,9 @@ def translate(input,conversionType):
         index = index + 1
     return output
 
-if __name__ == "__main__":    
-    random.seed(datetime.now().timestamp())
-    
-    for i in range(3):
+
+def kanaGame(rounds=3):
+    for i in range(rounds):
         item = random.choice(list(romaji.items())) # Picks a random item from the translation dictionary
         print(item[1]["hiragana"]) # Prints the hiragana of this item
         
@@ -57,4 +56,8 @@ if __name__ == "__main__":
         end = datetime.now().timestamp()
         
         print(f"Total Time: {(end-start)}") # Prints the amount of time it took.
+        
+if __name__ == "__main__":    
+    random.seed(datetime.now().timestamp())
     
+    print(translate("gasazabachhlipi","katakana"))
